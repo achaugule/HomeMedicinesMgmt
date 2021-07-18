@@ -1,0 +1,31 @@
+<h2>Medicines Available</h2>
+
+<!-- <h1>{{medicines.length}}</h1> -->
+<div *ngIf="medicines">
+    <ul class="heroes">
+      <li *ngFor="let med of medicines" (click)="onSelect(med)">
+        <!-- <span class="badge">{{med.Id}}</span> -->
+          <span class="badge">{{med.Name}}</span>
+          <!-- <span class="badge">{{drug.Amount}}</span> -->
+      </li>
+    </ul>
+</div>
+
+<div *ngIf='errorMessage'>
+Error: {{ errorMessage }}
+</div>
+
+<div *ngIf="selectedDrug">
+<h2>{{selectedDrug.Name | uppercase}}</h2>
+<ul>
+  <li>
+    <span>Description: </span> {{selectedDrug.Description}}
+  </li>
+  <li>
+    <span>Amount: </span> {{selectedDrug.Amount}}
+  </li>
+  <li>
+    <span>ExpiryDate: </span> {{selectedDrug.ExpiryDate}}
+  </li>
+</ul>
+</div>

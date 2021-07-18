@@ -1,0 +1,32 @@
+<p>Add Medicines</p>
+
+<form #medsForm="ngForm">
+    {{model | json}}
+    <div>
+        <label for="Name">Name: </label>
+        <input type="text" id="Name" 
+        [(ngModel)]="model.Name" name="Name"/>
+    </div>
+
+    <div>
+        <label for="Amount">Amount: </label>
+        <input type="text" id="Amount" 
+        [(ngModel)]="model.Amount" name="Amount"/>
+    </div>
+
+    <div>
+        <label for="ExpiryDate">ExpiryDate:</label>
+        <input type="text" id="ExpiryDate" 
+        [(ngModel)]="model.ExpiryDate" name="ExpiryDate"/>
+    </div>
+
+    <div>
+        <label for="Description">Description: </label>
+        <input type="text" id="Description" 
+        [(ngModel)]="model.Description" name="Description"/>
+    </div>
+
+    <div>
+        <button type="button" (click)="newMed(model.Name, model.Amount, model.ExpiryDate, model.Description, true)">New Med</button>
+    </div>
+</form>
